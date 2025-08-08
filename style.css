@@ -1,0 +1,63 @@
+:root{
+    --tamanhoFontePrincipal: 1rem
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica;
+}
+
+header{
+    padding: 1.5em 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-around;
+    font-size: var(--tamanhoFontePrincipal);
+}
+
+header button{
+   border: none;
+   background-color: transparent;
+   font-size: var(--tamanhoFontePrincipal);
+   padding: 15px;
+   border-radius: 15px;
+    transition: 1s;
+}
+
+header button:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    align-items: center;
+    gap: 10px;
+}
+
+.card img{
+    height: 100px;
+    width: 70px;
+}
+
+dialog {
+  width: clamp(300px, 450px, 600px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 15px;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
