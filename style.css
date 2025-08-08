@@ -33,29 +33,74 @@ header button:hover {
 }
 
 main {
+  padding: 2em;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .card {
+  height: 450px;
+  box-shadow: 0 0 10px var(--hoverColor);
+  border-radius: 10px;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  transition: all 0.3s ease;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--hoverColor);
 }
 
 .card img {
-  height: 100px;
-  width: 70px;
+  box-shadow: 0 0 10px 3px var(--hoverColor);
+  height: 70%;
 }
 
-.hidden{
-  display: none !important;
+.cardButtons {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+.cardButtons button {
+  font-size: 2em;
+  background-color: transparent;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteBtn {
+  color: red;
+}
+
+.deleteBtn:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.readBtn:hover{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none; 
 }
 
 #formBox {
+  transition: all 0.3s ease;
   position: fixed;
   width: clamp(300px, 450px, 600px);
   top: 50%;
