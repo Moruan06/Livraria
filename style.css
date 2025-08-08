@@ -51,7 +51,12 @@ main {
   width: 70px;
 }
 
-dialog {
+.hidden{
+  display: none !important;
+}
+
+#formBox {
+  position: fixed;
   width: clamp(300px, 450px, 600px);
   top: 50%;
   left: 50%;
@@ -79,12 +84,12 @@ input[type="checkbox"]{
     width: 20px;
 }
 
-dialog > *,
+#formBox > *,
 form > * {
   margin-bottom: 20px;
 }
 
-dialog button {
+#formBox button {
   width: 45%;
   height: 40px;
   border: none;
@@ -94,10 +99,10 @@ dialog button {
   font-size: var(--tamanhoFontePrincipal);
 }
 
-dialog button[type="submit"] {
+#formBox button[type="submit"] {
   background-color: green;
 }
 
-dialog button:hover {
+#formBox button:hover {
   background-image: linear-gradient(var(--hoverColor), var(--hoverColor));
 }

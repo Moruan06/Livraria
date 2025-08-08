@@ -9,27 +9,44 @@
   <body>
     <header>
       <h1>Book List</h1>
-      <button onclick="document.querySelector('.bookForm').showModal()">
+      <button id="addBookBtn">
         <strong>+Add Book</strong>
       </button>
     </header>
-    <main>
-      <dialog class="bookForm">
-        <h1>Add new book</h1>
-        <form method="dialog">
-            <input type="text" name="title" id="title" placeholder="Book title" required>
-            <input type="text" name="author" id="author" placeholder="Author" required>
-            <input type="url" name="image" id="image" placeholder="URL of the book cover" required>
-            <label for="read">Have you read?</label>
-            <input type="checkbox" name="read" id="read">
-            <div class="buttons">
-              <button type="submit">Submit</button>
-              <button onclick="document.querySelector('.bookForm').close()">Cancel</button>
-            </div>
-        </form>
-      </dialog>
-    </main>
+    <main></main>
     <footer></footer>
+    <div id="formBox" class="hidden">
+      <h1>Add new book</h1>
+      <form id="newBookForm">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Book title"
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          required
+        />
+        <input
+          type="url"
+          name="image"
+          id="image"
+          placeholder="URL of the book cover"
+          required
+        />
+        <label for="read">Have you read?</label>
+        <input type="checkbox" name="read" id="read" />
+        <div class="buttons">
+          <button type="submit" id="botao-submit">Submit</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
