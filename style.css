@@ -11,6 +11,12 @@
 }
 
 header {
+  z-index: 1;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
   padding: 1.5em 0;
   box-shadow: 0 0 10px var(--hoverColor);
   display: flex;
@@ -150,4 +156,8 @@ form > * {
 
 #formBox button:hover {
   background-image: linear-gradient(var(--hoverColor), var(--hoverColor));
+}
+
+i{
+  pointer-events: none;
 }
