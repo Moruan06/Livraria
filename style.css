@@ -13,7 +13,7 @@
 header {
   z-index: 1;
   position: sticky;
-  width: 100%;
+  width: 100dvw;
   top: 0;
   left: 0;
   background-color: white;
@@ -61,7 +61,6 @@ main {
 }
 
 .card:hover {
-  transform: scale(1.05);
   box-shadow: 0 0 15px var(--hoverColor);
 }
 
@@ -108,7 +107,7 @@ main {
 #formBox {
   transition: all 0.3s ease;
   position: fixed;
-  width: clamp(300px, 450px, 600px);
+  width: clamp(300px, 50%, 400px);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
