@@ -67,6 +67,7 @@ main {
 .card img {
   box-shadow: 0 0 10px 3px var(--hoverColor);
   height: 70%;
+  aspect-ratio: 2/3;
 }
 
 .cardButtons {
