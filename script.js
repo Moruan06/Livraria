@@ -73,7 +73,9 @@ function displayBook(arr) {
     .map(
       (item) =>
         `<div class="card" data-id="${item.id}">
-            <img src="${item.bookCover}" alt="Capa do livro">
+            <img src="${item.bookCover}"
+            onerror="this.onerror=null;this.src='defaultCover.png';"
+            alt="Capa do livro">
             <p class="title"> ${item.title} </p>
             <p class="author"> by ${item.author} </p>
             <div class="cardButtons">
