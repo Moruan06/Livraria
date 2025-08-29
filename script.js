@@ -1,17 +1,16 @@
 let myLibrary = [];
 const container = document.querySelector("main");
-const formBox = document.querySelector("#formBox");
+const dialog = document.querySelector("#formBox");
 const bookForm = document.querySelector("#newBookForm");
 
 container.addEventListener('click', (event) =>{
   if(event.target.matches(".readBtn")){
-    console.log("butao clicado")
     const card = event.target.closest(".card");
     const bookId = card.dataset.id;
 
     const bookToUpdate = myLibrary.find(book => book.id === bookId)
 
-    bookToUpdate.toogleStatus();
+    bookToUpdate.toggleStatus();
     displayBook(myLibrary)
   }
 
@@ -24,24 +23,23 @@ container.addEventListener('click', (event) =>{
   }
 })
 
-document.getElementById("addBookBtn").addEventListener("click", (e) => {
-  e.preventDefault();
-  formBox.classList.remove("hidden");
-  console.log("Button clicked");
+document.getElementById("addBookBtn").addEventListener("click", (event) => {
+  event.preventDefault();
+  dialog.showModal();
 });
 
 document.getElementById("cancelBtn").addEventListener("click", (event) => {
   event.preventDefault();
   bookForm.reset();
-  formBox.classList.add("hidden");
+  dialog.close()
 });
 
 bookForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const titleInputForm = document.querySelector("#title").value;
-  const authorInputForm = document.querySelector("#author").value;
-  const imageInputForm = document.querySelector("#image").value;
-  const readInputForm = document.querySelector("#read").checked;
+  const data = new FormData(bookForm);
+  const titleInputForm = data.get("title")
+  const authorInputForm = data.get("author")
+  const imageInputForm = data.get("image")
+  const readInputForm = data.get("read")
   addBookToLibrary(
     titleInputForm,
     authorInputForm,
@@ -50,16 +48,19 @@ bookForm.addEventListener("submit", (event) => {
   );
   bookForm.reset();
   displayBook(myLibrary);
-  formBox.classList.add("hidden");
 });
+class Book{
+  constructor(title, author, bookCover, read){
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.bookCover = bookCover;
+    this.read = read;
+  }
 
-function Book(title, author, bookCover, read) {
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.bookCover = bookCover;
-  this.read = read;
-  this.toogleStatus = () => this.read = !this.read;
+  toggleStatus(){
+    this.read = !this.read;
+  }
 }
 
 function addBookToLibrary(titleInput, authorInput, bookCoverInput, readInput) {

@@ -99,11 +99,6 @@ main {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none; 
-}
-
 #formBox {
   transition: all 0.3s ease;
   position: fixed;
